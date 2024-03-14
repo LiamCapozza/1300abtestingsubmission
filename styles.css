@@ -30,12 +30,6 @@ img {
   height: auto;
 }
 
-article {
-  background: #f4f4f4;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
 .metric,
 .analysis-item {
   background-color: #9bae9f;

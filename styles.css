@@ -1,0 +1,44 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #075829;
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+h2 {
+  color: #181818;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+article {
+  background: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.metric,
+.analysis-item {
+  background-color: #9bae9f;
+  padding: 10px;
+  border-radius: 10px;
+}

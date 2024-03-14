@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A/B Testing Detailed Report</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Detailed A/B Testing Report - Liam Capozza</h1>
+    </header>
+    <main>
+      <div id="overview">
+        <h2>Project Intro</h2>
+        <p>
+          This A/B testing project tries to evaluate the user interactions of
+          two different versions of a Doctor's appt. form. By comparing the two
+          versions, A and B, we are looking for which version has better user
+          interaction and efficiency.
+        </p>
+      </div>
+
+      <div id="modifications">
+        <h2>Webpage Modifications</h2>
+        <p>
+          I changed the layout of the appointments for Version B. I was aiming
+          for better visibility and distinction between buttons and texts which
+          would hopefully result in fewer misclicks and a faster experience.
+        </p>
+
+        <img src="bchanges.png" alt="Webpage Version B Modifications" />
+      </div>
+
+      <div id="metrics-and-hypotheses">
+        <h2>Metrics and Hypotheses</h2>
+        <div class="metric">
+          <h3>1. Misclick Rate</h3>
+          <p>
+            <strong>Null Hypothesis:</strong> Version A of the form will have a
+            very similar average misclick rate as Version B. I believe we will
+            reject this hypothesis since Version A had buttons and text that are
+            hard to see and differentiate from one another.
+          </p>
+          <p>
+            <strong>Alternative Hypothesis:</strong> Version B will have a lower
+            average misclick rate than Version A. I believe this will be found
+            true since the changes I made make it easier to see and
+            differentiate different appointments from one another.
+          </p>
+        </div>
+
+        <div class="metric">
+          <h3>2. Time on Page</h3>
+          <p>
+            <strong>Null Hypothesis:</strong>Version A will have a very similar
+            average time on the page as Version B. I believe we will reject this
+            hypothesis because Version A is confusing in how to exactly book an
+            appointment, so the user will have to spend more time figuring out
+            what to press.
+          </p>
+          <p>
+            <strong>Alternative Hypothesis:</strong> Version B will have a lower
+            time on page than Version A. I believe we will prove this hypothesis
+            because of the highlight and border around each different
+            appointment, making it easy to tell which buttons belong to which
+            appointment
+          </p>
+        </div>
+
+        <div class="metric">
+          <h3>3. Mouse Move Distance</h3>
+          <p>
+            <strong>Null Hypothesis:</strong> Version A will have a very similar
+            average mouse move distance as Version B. I believe we will reject
+            this because I think mouse move distance will be correlated with the
+            amount of user confusion, as they might go to click on option but
+            then realize that they need to click another.
+          </p>
+          <p>
+            <strong>Alternative Hypothesis:</strong> Version B will have a lower
+            average mouse move distance than Version A. I believe this because
+            the changes made to Version B allow for less confusion when finding
+            an appointment, leading to fewer mistakes or misclicks, therefore
+            less distance moved by the mouse.
+          </p>
+        </div>
+      </div>
+
+      <div id="statistical-analysis">
+        <h2>Statistical Analysis Results</h2>
+        <div class="analysis-item">
+          <h3>Misclick Rate Analysis</h3>
+          <p>
+            We will use a chi squared test because we are checking how often the
+            users of version A misclicked versus how often the users of version
+            B misclicked. Since a user can misclick or not misclick (true or
+            false), this is categorical data.
+          </p>
+          <p>
+            <strong>Chi-Squared:</strong> 8.710, <strong>P-Value:</strong> .003.
+          </p>
+          <p>
+            We reject the null hypothesis, since with a p-value less than or
+            equal to 0.05, we can say that there is a statistically significant
+            difference between the two datasets, specifically that there were a
+            lot less misclicks in Version B than Version A due to the high
+            chi-squared value.
+          </p>
+        </div>
+
+        <div class="analysis-item">
+          <h3>Time on Page Analysis</h3>
+          <p>
+            We will use a one-tailed t test since the time on page is a
+            continuous variable and we are looking to see that version B has a
+            <strong>lower</strong> average time than version A.
+          </p>
+          <p>
+            <strong>T-Score:</strong> -4.512, <strong>P-Value:</strong> .0001,
+            <strong>Version A Avg:</strong> 25865ms,
+            <strong>Version B Avg:</strong> 8503ms.
+          </p>
+          <p>
+            We reject the null hypothesis, since with a p-value less than or
+            equal to 0.05, we can confidently say that there is a significant
+            statistical difference between the two versions, with the T-score
+            implying that Version B is lower than Version A. We can see this is
+            the case with A’s average time on page being 25865ms while B’s is
+            8503ms. A is over 3 times as long as B is.
+          </p>
+        </div>
+
+        <div class="analysis-item">
+          <h3>Mouse Move Distance Analysis</h3>
+          <p>
+            We will use a one-tailed t test again since distance moved is a
+            continuous variable and we are hoping to find that version B has a
+            <strong>lower</strong> average distance than version A.
+          </p>
+          <p>
+            <strong>T-Score:</strong> -3.372, <strong>P-Value:</strong> .002,
+            <strong>Version A Avg:</strong> 7337,
+            <strong>Version B Avg:</strong> 2683.
+          </p>
+          <p>
+            We reject the null hypothesis, since with a p-value less than or
+            equal to 0.05, we can confidently say that there is a significant
+            statistical difference between the two versions, with the T-score
+            implying that Version B is lower than Version A. We can see this is
+            the case with A’s average mouse move distance being 7337 while B’s
+            is 2683. A is almost 3 times as long as B is.
+          </p>
+        </div>
+      </div>
+
+      <div id="summary">
+        <h2>Summary and Conclusions</h2>
+        <p>
+          Since we are able to reject the null hypothesis on all three chosen
+          metrics, we can say with high levels of confidence that Version B
+          creates a more streamlined and user-friendly experience compared to
+          Version A. Version B has an almost perfect no misclick rate while
+          Version A has almost 50% misclick rate. In both time on page and mouse
+          move distance, Version A's mean was about 3x as long as Version B's
+          mean.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
